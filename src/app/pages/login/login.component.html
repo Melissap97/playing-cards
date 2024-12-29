@@ -1,0 +1,17 @@
+<div id ="container">
+  <form [formGroup]="loginFormGroup" (submit)="login()" >
+    <h3>Login</h3>
+    <div class="form-field">>
+      <label> Username</label>
+      <input formControlName="username">
+  </div>
+  <div class="form-field">
+    <label>Password</label>
+    <input type="password" formControlName="password"/>
+  </div>
+  <button [disabled]="loginFormGroup.invalid">Login</button>
+  @if (invalidCredentials) {
+    <div class="error"> Invalid credentials</div>
+  }
+  </form>
+</div>
